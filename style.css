@@ -5,6 +5,7 @@ margin: 5px 20px 0 20px;
 .navbar {
     background-color: rgb(107, 107, 107);
     justify-content: space-between;
+    margin-bottom: 30px;
     }
     
 .flex-container {
@@ -23,4 +24,19 @@ margin: 5px 20px 0 20px;
 .navbar-logo-section {
     display: flex;
     align-items: center;
+}
+
+.new-task-section {
+    margin-bottom: 30px;
+}
+
+.task-cards-section {
+    margin-bottom: 30px;
+    background-color: rgb(107, 107, 107);
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-card {
+    background-color: #fff;
 }
