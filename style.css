@@ -40,3 +40,18 @@ margin: 5px 20px 0 20px;
 .task-card {
     background-color: #fff;
 }
+
+
+
+.landing-section {
+    flex-direction: column;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#logo-2 {
+    height: auto;
+    width: 50%;
+}
