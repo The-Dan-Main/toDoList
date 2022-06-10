@@ -47,15 +47,15 @@ button {
     cursor: pointer;
 }
 .landing-section-underline {
-    height: 5px;
+    height: 3px;
     width: 0;
     background-color: black;
     position: relative;
     top: 2px;
 }
 .landing-section-links:hover .landing-section-underline{
-    height: 5px;
-    width: 150px;
+    height: 3px;
+    width: 100%;
     background-color: black;
     position: relative;
     top: 2px;
@@ -70,8 +70,13 @@ button {
     width: 50%;
 }
 #construction {
-    width: 100%;
+    width: 50%;
     height: auto;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    position: relative;
+    left: 25%;
 }
 
 
@@ -102,6 +107,8 @@ button {
 #logo {
     width: auto;
     height: 80px;
+    position: relative;
+    top: 30px;
 }
 .navbar-logo-section {
     display: flex;
@@ -110,14 +117,25 @@ button {
 .nav-list-elements {
     text-decoration: none;
 }
-.nav-list-elements:hover {
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    position: relative;
-    bottom: 5px;
+.nav-list-items {
+    flex-direction: column;
 }
 
-
+.nav-list-elements-underline {
+    height: 3px;
+    width: 0;
+    background-color: black;
+    position: relative;
+    top: 2px;
+}
+.nav-list-items:hover .nav-list-elements-underline{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    top: 2px;
+    transition: width 1s, height 0s;
+}
 
 
 
