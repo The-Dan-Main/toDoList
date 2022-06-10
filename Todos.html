@@ -14,17 +14,21 @@
         <img src="./img/logo-Todo.png" alt="Todoay" id="logo">
     </div>
     <div class="nav-list flex-container">
-        <a href="./Index.html"><h2>Home</h2></a>
-        <a href="./users.html"><h2>Login</h2></a>
-        <h2>Contact</h2>
+        <a class="nav-list-elements" href="./Index.html"><h2>Home</h2></a>
+        <a class="nav-list-elements nav-list-middle" href="./users.html"><h2>Login</h2></a>
+        <a class="nav-list-elements" href="./users.html"><h2>Contact</h2></a>
     </div>
 </div>
 
 <div class="new-task-section">
     <div class="flex-container">
-         <h3>New Task:</h3>
-         <input type="text" name="new-task-input" id="new-task-input">
-         <button><h3>Add now</h3></button>
+        <div class="new-task-title">
+            <h3>New Task:</h3>
+        </div>
+        <div class="new-task-input-section">
+            <input type="text" name="new-task-input" id="new-task-input">
+            <button id="new-task-button">Add now</button>
+        </div>
     </div>
 </div>
 
@@ -43,20 +47,30 @@
             <div class="task-created">
                 <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
             </div>
-            <button class="task-edit-button">Edit</button>
-            <button class="task-finish-button">finish</button>
+            <div class="task-buttons">
+                <button class="task-edit-button">Edit</button>
+                <button class="task-finish-button">Finish</button>
+            </div>
         </div>
         <div class="task-card flex-container">
             <input class="task-title" value="wash dishes" type="text">
-            <h3 class="task-created">created on: <span class="task-created-date">09.06.2022</span></h3>
-            <button class="task-edit-button">Edit</button>
-            <button class="task-finish-button">finish</button>
+            <div class="task-created">
+                <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
+            </div>
+            <div class="task-buttons">
+                <button class="task-edit-button">Edit</button>
+                <button class="task-finish-button">Finish</button>
+            </div>
         </div>
         <div class="task-card flex-container">
             <input class="task-title" value="kill time" type="text">
-            <h3 class="task-created">created on: <span class="task-created-date">09.06.2022</span></h3>
-            <button class="task-edit-button">Edit</button>
-            <button class="task-finish-button">finish</button>
+            <div class="task-created">
+                <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
+            </div>
+            <div class="task-buttons">
+                <button class="task-edit-button">Edit</button>
+                <button class="task-finish-button">Finish</button>
+            </div>
         </div>
     </div>  
 </div>

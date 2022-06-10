@@ -3,6 +3,15 @@
     src: url(./fonts/Karla-VariableFont_wght.ttf);
 }
 
+:root {
+    --gray-back: rgb(221, 220, 220);
+    --light-gray: whitesmoke;
+    --dark-gray: rgb(107, 107, 107);
+    --white: #ffff;
+    --black: #0000;
+
+}
+
 body {
     margin: 5px 20px 0 20px;
     font-family: Karla;
@@ -11,47 +20,8 @@ body {
 button, input {
     font-family: Karla;
 }
-.navbar {
-    background-color: rgb(107, 107, 107);
-    justify-content: space-between;
-    margin-bottom: 30px;
-    }
-    
-.flex-container {
-    display: flex;
-}
-.nav-list {
-    flex-direction: column;
-    display: flex;
-    align-items: center;
 
-}
-#logo {
-    width: auto;
-    height: 100px;
-}
-.navbar-logo-section {
-    display: flex;
-    align-items: center;
-}
 
-.new-task-section {
-    margin-bottom: 30px;
-}
-#new-task-input{
-  pointer-events: none;  
-}
-
-.task-cards-section {
-    margin-bottom: 30px;
-    background-color: rgb(221, 220, 220);
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.task-card {
-    background-color: #fff;
-}
 
 .landing-section {
     flex-direction: column;
@@ -72,10 +42,79 @@ button, input {
 
 
 
+
+
+
+.navbar {
+    background-color: var(--white);
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid rgb(90, 90, 90) 5px;
+    height: 100px;
+    }
+    
+.flex-container {
+    display: flex;
+}
+.nav-list {
+    flex-direction: row;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+#logo {
+    width: auto;
+    height: 80px;
+}
+.navbar-logo-section {
+    display: flex;
+    align-items: center;
+}
+.nav-list-elements {
+    text-decoration: none;
+}
+.nav-list-elements:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    position: relative;
+    bottom: 5px;
+}
+
+
+
+
+
+.new-task-section {
+    margin-bottom: 30px;
+}
+#new-task-input{
+  pointer-events: none;  
+}
+
+
+
+
+
+.task-cards-section {
+    margin-bottom: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 600px;
+    max-height: fit-content;
+    border-radius: 20px;
+}
+
+.task-card {
+    background-color: #fff;
+}
+
 .tasks-cards-filters {
     background-color: whitesmoke;
     padding-right: 10px;
-    border-right: solid black 2px;
+    border-radius: 20px;
 }
 .filter-section-list {
     list-style: none;
@@ -100,8 +139,10 @@ button, input {
     flex-direction: column;
     flex-grow: 1;
     row-gap: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: var(--gray-back);
 }
 
 .task-card {
@@ -109,7 +150,7 @@ button, input {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 10px;
     border-radius: 10px;
     column-gap: 10px;
@@ -118,34 +159,51 @@ button, input {
 
 
 .task-title {
-    width: 60%;
-    padding-left: 20px;
+    width: 40%;
+    padding-left: 10px;
     background-color: #fff;
     height: 40px;
     font-size: 20px;
     font-weight: bold;
     margin: 5px;
-    border-bottom: none;
-    border-top: none;
-    border-left: none;
-    border-right: solid 1px black;
+    margin-left: 10px;
+    padding-right: 20px;
+    border: none;
 }
+
+.task-title:focus-visible {
+    border: white -1px double ;
+    border-radius: 10px;
+    background-color: black;
+    color: #fff;
+}
+
+
 .task-created {
-    flex-grow: 2;
-    border-right: solid 1px black;
+    /* flex-grow: 1; */
+    border-right: solid 2px black;
+    border-left: solid 2px black;
     height: 40px;
     display: flex;
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;
 }
 
-.task-edit-button {
-    flex-grow: 1;
+.task-edit-button, .task-finish-button {
     font-size: 20px;
     font-weight: bold;
+    width: 100px;
+    margin: 0 10px 0 10px;
+    border-radius: 10px;
+    border: 1px solid black;
 }
-.task-finish-button {
-    flex-grow: 1;
-    margin-right: 10px;
-    font-size: 20px;
-    font-weight: bold;
+
+.task-buttons {
+    display: flex;
+    height: 40px;
+    margin: 0 10px 0 10px;
+    align-items: center;
 }
