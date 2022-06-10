@@ -63,6 +63,15 @@ button:hover {
     top: 2px;
     transition: width 1s, height 0s;
 }
+#turn-arrow {
+    height: 100px;
+}
+
+#turn-arrow:hover {
+    transform: rotate(360deg);
+    transition: transform 4s;
+}
+
 
 
 
