@@ -315,6 +315,9 @@ button:hover {
     align-items: center;
 }
 
+
+
+
 .footer {
     margin-top: 30px;
     background-color: black;
@@ -330,4 +333,7 @@ button:hover {
 }
 .footer-title {
     color: #fff;
+}
+.footer-images {
+    padding: 10px;
 }
