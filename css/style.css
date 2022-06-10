@@ -89,8 +89,8 @@ button:hover {
 .navbar {
     background-color: var(--white);
     justify-content: space-between;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: solid rgb(90, 90, 90) 5px;
     height: 100px;
 }
@@ -110,7 +110,7 @@ button:hover {
     width: auto;
     height: 80px;
     position: relative;
-    top: 30px;
+    top: 20px;
 }
 .navbar-logo-section {
     display: flex;
@@ -142,13 +142,11 @@ button:hover {
 
 
 .new-task-section {
-    margin-bottom: 10px;
-    margin-left: 170px;
-    background-color: var(--gray-back);
-    height: auto;
-    padding: 20px;
+    margin-bottom: 20px;
+    height: 80px;
     border-radius: 20px;
     align-items: center;
+    display: flex;
 }
 .new-task-title {
     padding-left: 20px;
@@ -186,13 +184,37 @@ button:hover {
     border: 2px solid black;
     height: 44px;
 }
+.new-task-plus {
+    width: 160px;
+    background-color: var(--light-gray);
+    align-items: stretch;
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+.new-task-img {
+    height: 40px;
+    cursor: pointer;
+}
+.new-task-card {
+    display: flex;
+    margin-left: 20px;
+    background-color: var(--gray-back);
+    flex-grow: 1;
+    padding: 20px;
+    align-items: center;
+    border-radius: 20px;
+}
 
 
 
 
 
 .task-cards-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex-direction: row;
     justify-content: space-between;
     min-height: 600px;
@@ -200,14 +222,12 @@ button:hover {
     border-radius: 20px;
 }
 
-.task-card {
-    background-color: #fff;
-}
 
 .tasks-cards-filters {
     background-color: whitesmoke;
     padding-right: 10px;
     border-radius: 20px;
+    width: 160px;
 }
 .filter-section-list {
     list-style: none;
@@ -231,22 +251,23 @@ button:hover {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    row-gap: 10px;
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     border-radius: 20px;
     background-color: var(--gray-back);
 }
 
 .task-card {
+    background-color: #fff;
     border: solid 2px black;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     justify-content: space-between;
     margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 10px;
-    column-gap: 10px;
     height: fit-content;
     flex-direction: row;
     align-content: center;
@@ -316,10 +337,28 @@ button:hover {
 }
 
 
+/** Unfinished **/
+div.finished > div > h3 {
+    text-decoration: line-through 2px;
+    background-color: var(--dark-gray);
+}
+div.finished > div > input {
+    text-decoration: line-through 2px;
+    background-color: var(--dark-gray);
+}
+div.finished > div > img {
+    filter: invert(100%);
+}
+
+.task-card.finished {
+    background-color: var(--dark-gray);
+}
+
+
 
 
 .footer {
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: black;
     height: 200px;
     margin-left: -10%;
@@ -336,4 +375,8 @@ button:hover {
 }
 .footer-images {
     padding: 10px;
+}
+.linked-in {
+    height: 30px;
+    filter: grayscale(100%) brightness(60);
 }

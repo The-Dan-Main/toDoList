@@ -38,77 +38,98 @@
         </div>
     </div>
 
-
     <div class="flex-container new-task-section">
-        <div class="new-task-title">
-            <h3>New Task:</h3>
+        <div class="new-task-plus">
+            <img src="./img/plus.png" alt="Add Task" class="new-task-img">
         </div>
-        <div class="new-task-input-section">
-            <input type="text" name="new-task-input" id="new-task-input">
-            <button id="new-task-button">Add now</button>
+
+        <div class="new-task-card flex-container">
+            <div class="new-task-title">
+                <h3>New Task:</h3>
+            </div>
+            <div class="new-task-input-section">
+                <input type="text" name="new-task-input" id="new-task-input">
+                <button id="new-task-button">Add now</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="task-cards-section flex-container">
+        <div class="tasks-cards-filters">
+            <ul class="filter-section-list">
+                <li class="filter-section-list-items">Today</li>
+                <li class="filter-section-list-items">Open Tasks</li>
+                <li class="filter-section-list-items">Planned Tasks</li>
+                <li class="filter-section-list-items">Finished Tasks</li>
+            </ul>
+        </div>
+        <div class="tasks-cards-display-section">
+            <div class="task-card flex-container">
+                
+                <div class="flex-container task-card-title-section">
+                    <img src="./img/arrow2.png" alt="" class="task-card-arrow">
+                    <input class="task-title" value="Fold laundry" type="text">
+                </div>
+                <div class="task-created">
+                    <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
+                </div>
+                <div class="task-buttons">
+                    <button class="task-edit-button">Edit</button>
+                    <button class="task-finish-button">Finish</button>
+                </div>
+            </div>
+
+            <div class="task-card flex-container">
+                <div class="flex-container task-card-title-section">
+                    <img src="./img/arrow2.png" alt="" class="task-card-arrow">
+                    <input class="task-title" value="Wash dishes" type="text">
+                </div>
+                <div class="task-created">
+                    <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
+                </div>
+                <div class="task-buttons">
+                    <button class="task-edit-button">Edit</button>
+                    <button class="task-finish-button">Finish</button>
+                </div>
+            </div>
+
+
+            <div class="task-card flex-container finished">
+                <div class="flex-container task-card-title-section">
+                    <img src="./img/arrow2.png" alt="" class="task-card-arrow">
+                    <input class="task-title" value="Kill time" type="text">
+                </div>
+                <div class="task-created">
+                    <h3>created on: <span class="task-created-date">09.06.2022</span></h3>
+                </div>
+                <div class="task-buttons">
+                    <button class="task-edit-button">Edit</button>
+                    <button class="task-finish-button">unfinish</button>
+                </div>
+            </div>
+
+
+        </div>  
+    </div>
+
+    <div class="footer flex-container">
+        <h3 class="footer-title">Created by The-Dan-Main</h3>
+        <div class="footer-img">
+
+            <a href="https://github.com/The-Dan-Main">
+                <img src="./img/github-logo.png" alt="Github" class="footer-images">
+            </a>
+            <a href="./index.html">
+                <img src="./img/twitter-logo.png" alt="Twitter" class="footer-images">
+            </a>
+            <a href="https://www.linkedin.com/in/dan-weber-zurich/">
+                <img src="./img/LI-In-Bug.png" alt="Facebook" class="footer-images linked-in">
+            </a>
         </div>
     </div>
 
-
-<div class="task-cards-section flex-container">
-    <div class="tasks-cards-filters">
-        <ul class="filter-section-list">
-            <li class="filter-section-list-items">Today</li>
-            <li class="filter-section-list-items">Open Tasks</li>
-            <li class="filter-section-list-items">Planned Tasks</li>
-            <li class="filter-section-list-items">Closed Tasks</li>
-        </ul>
-    </div>
-    <div class="tasks-cards-display-section">
-        <div class="task-card flex-container">
-            
-            <div class="flex-container task-card-title-section">
-                <img src="./img/arrow2.png" alt="" class="task-card-arrow">
-                <input class="task-title" value="Fold laundry" type="text">
-            </div>
-            <div class="task-created">
-                <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
-            </div>
-            <div class="task-buttons">
-                <button class="task-edit-button">Edit</button>
-                <button class="task-finish-button">Finish</button>
-            </div>
-        </div>
-        <div class="task-card flex-container">
-            <div class="flex-container task-card-title-section">
-                <img src="./img/arrow2.png" alt="" class="task-card-arrow">
-                <input class="task-title" value="Wash dishes" type="text">
-            </div>
-            <div class="task-created">
-                <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
-            </div>
-            <div class="task-buttons">
-                <button class="task-edit-button">Edit</button>
-                <button class="task-finish-button">Finish</button>
-            </div>
-        </div>
-        <div class="task-card flex-container">
-            <div class="flex-container task-card-title-section">
-                <img src="./img/arrow2.png" alt="" class="task-card-arrow">
-                <input class="task-title" value="Kill time" type="text">
-            </div>
-            <div class="task-created">
-                <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
-            </div>
-            <div class="task-buttons">
-                <button class="task-edit-button">Edit</button>
-                <button class="task-finish-button">Finish</button>
-            </div>
-        </div>
-    </div>  
-</div>
-<div class="footer flex-container">
-    <h3 class="footer-title">Created by The-Dan-Main</h3>
-    <div class="footer-img">
-        <img src="./img/github-logo.png" alt="Github">
-        <img src="./img/twitter-logo.png" alt="Twitter">
-        <img src="./img/facebook-logo.png" alt="Facebook">
-    </div>
-</div>
 </body>
 </html>
