@@ -29,6 +29,9 @@ margin: 5px 20px 0 20px;
 .new-task-section {
     margin-bottom: 30px;
 }
+#new-task-input{
+  pointer-events: none;  
+}
 
 .task-cards-section {
     margin-bottom: 30px;
@@ -73,29 +76,27 @@ margin: 5px 20px 0 20px;
 }
 
 .task-card {
-    border: solid 1px black;
+    border: solid 2px black;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    margin: 0px;
-    padding: 0px 10px 0 10px;
-    border-radius: 30px;
+    margin: 10px;
+    border-radius: 10px;
     column-gap: 10px;
     height: fit-content;
 }
 
 
 .task-title {
-    flex-grow: 4;
+    width: 60%;
     padding-left: 10px;
     background-color: darkgray;
     border-radius: 10px;
-    margin: 0;
+
 }
 .task-created {
     flex-grow: 2;
-    margin: 0;
 }
 
 .task-edit-button {
@@ -103,4 +104,5 @@ margin: 5px 20px 0 20px;
 }
 .task-finish-button {
     flex-grow: 1;
+    margin-right: 10px;
 }
