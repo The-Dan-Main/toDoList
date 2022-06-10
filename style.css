@@ -41,8 +41,6 @@ margin: 5px 20px 0 20px;
     background-color: #fff;
 }
 
-
-
 .landing-section {
     flex-direction: column;
     height: 800px;
@@ -58,4 +56,51 @@ margin: 5px 20px 0 20px;
 #construction {
     width: 100%;
     height: auto;
+}
+
+
+
+.tasks-cards-filters {
+    background-color: whitesmoke;
+    padding-right: 10px;
+}
+
+.tasks-cards-display-section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    row-gap: 10px;
+}
+
+.task-card {
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: 0px;
+    padding: 0px 10px 0 10px;
+    border-radius: 30px;
+    column-gap: 10px;
+    height: fit-content;
+}
+
+
+.task-title {
+    flex-grow: 4;
+    padding-left: 10px;
+    background-color: darkgray;
+    border-radius: 10px;
+    margin: 0;
+}
+.task-created {
+    flex-grow: 2;
+    margin: 0;
+}
+
+.task-edit-button {
+    flex-grow: 1;
+}
+.task-finish-button {
+    flex-grow: 1;
 }
