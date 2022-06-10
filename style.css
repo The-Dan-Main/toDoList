@@ -21,6 +21,9 @@ button, input {
     font-family: Karla;
 }
 
+button {
+    cursor: pointer;
+}
 
 
 .landing-section {
@@ -194,18 +197,31 @@ button, input {
     border-radius: 10px;
     column-gap: 10px;
     height: fit-content;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+.task-card-title-section {
+    align-items: center;
 }
 
+.task-card-arrow {
+    height: 20px;
+    transform: rotate(-90deg);
+    margin-left: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
 
 .task-title {
-    width: 40%;
+    width: 400px;
     padding-left: 10px;
     background-color: #fff;
     height: 40px;
     font-size: 20px;
     font-weight: bold;
-    margin: 5px;
-    margin-left: 10px;
+    margin: 5px 0 5px 0;
+    flex-grow: 2;
     padding-right: 20px;
     border: none;
 }
