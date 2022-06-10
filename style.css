@@ -88,10 +88,49 @@ button, input {
 
 
 .new-task-section {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-left: 170px;
+    background-color: var(--gray-back);
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    align-items: center;
 }
+.new-task-title {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.new-task-input-section {
+    display: flex;
+    align-items: center;
+}
+
 #new-task-input{
-  pointer-events: none;  
+    min-height: 40px;
+    height: max-content;
+    width: 300px;
+    border: solid black 2px;
+    border-radius: 10px; 
+    margin-right: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#new-task-input:focus-visible {
+    background-color: black;
+    color: #fff;
+    border: solid 2px black;
+}
+
+#new-task-button {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    margin: 0 10px 0 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 44px;
 }
 
 
@@ -198,7 +237,8 @@ button, input {
     width: 100px;
     margin: 0 10px 0 10px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
+    height: 30px;
 }
 
 .task-buttons {
