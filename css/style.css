@@ -358,10 +358,13 @@ div.finished > div > input {
 div.finished > div > img {
     filter: invert(100%);
 }
-
+div.finished > div > button.task-edit-button {
+    visibility: hidden;
+}
 .task-card.finished {
     background-color: var(--dark-gray);
 }
+
 
 
 
