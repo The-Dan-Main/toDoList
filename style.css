@@ -15,6 +15,7 @@
 body {
     margin: 5px 20px 0 20px;
     font-family: Karla;
+    user-select: none;
 }
 
 button, input {
@@ -28,12 +29,42 @@ button {
 
 .landing-section {
     flex-direction: column;
-    height: 800px;
+    height: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-evenly;
+    background-color: var(--gray-back);
+    border-radius: 20px;
 }
+.landing-section-links {
+    border: solid 2px black;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--white);
+    flex-direction: column;
+}
+.landing-section-links:hover {
+    cursor: pointer;
+}
+.landing-section-underline {
+    height: 5px;
+    width: 0;
+    background-color: black;
+    position: relative;
+    top: 2px;
+}
+.landing-section-links:hover .landing-section-underline{
+    height: 5px;
+    width: 150px;
+    background-color: black;
+    position: relative;
+    top: 2px;
+    transition: width 1s, height 0s;
+}
+
+
+
+
 #logo-2 {
     height: auto;
     width: 50%;
@@ -221,7 +252,7 @@ button {
     font-size: 20px;
     font-weight: bold;
     margin: 5px 0 5px 0;
-    flex-grow: 2;
+    flex-grow: 5;
     padding-right: 20px;
     border: none;
 }
