@@ -30,17 +30,19 @@
 
 <div class="task-cards-section flex-container">
     <div class="tasks-cards-filters">
-        <ul>
-            <li>Today</li>
-            <li>Open Tasks</li>
-            <li>Planned Tasks</li>
-            <li>closed Tasks</li>
+        <ul class="filter-section-list">
+            <li class="filter-section-list-items">Today</li>
+            <li class="filter-section-list-items">Open Tasks</li>
+            <li class="filter-section-list-items">Planned Tasks</li>
+            <li class="filter-section-list-items">Closed Tasks</li>
         </ul>
     </div>
     <div class="tasks-cards-display-section">
         <div class="task-card flex-container">
             <input class="task-title" value="fold laundry" type="text">
-            <h3 class="task-created">created on: <span class="task-created-date">09.06.2022</span></h3>
+            <div class="task-created">
+                <h3 >created on: <span class="task-created-date">09.06.2022</span></h3>
+            </div>
             <button class="task-edit-button">Edit</button>
             <button class="task-finish-button">finish</button>
         </div>
