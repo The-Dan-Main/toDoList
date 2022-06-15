@@ -209,7 +209,7 @@ button:hover {
     cursor: pointer;
 }
 .new-task-card {
-    display: flex;
+    display: none;
     margin-left: 20px;
     background-color: var(--gray-back);
     flex-grow: 1;
@@ -237,6 +237,10 @@ button:hover {
     padding-right: 10px;
     border-radius: 20px;
     width: 160px;
+}
+.task-cards-filters-focused {
+    background-color: black;
+    color: #fff;
 }
 .filter-section-list {
     list-style: none;
