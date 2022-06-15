@@ -127,16 +127,27 @@ const createNewTaskCard = (title) => {
         newDivElement.appendChild(newDivElementThirdSection)
 
         displaySection.appendChild(newDivElement)
+
         cardFinishToggle()
+        updateTasks()
 }
 
-
+const addNowInput = document.getElementById("new-task-input")
+addNowInput.addEventListener("keypress", (event) => {
+    let inputText = document.getElementById("new-task-input")
+    if (event.key === "Enter" && addNowInput.value !== "") {
+        createNewTaskCard(inputText.value)
+        inputText.value = ""
+    }
+})
 
 const addNowButton = document.getElementById("new-task-button")
 addNowButton.addEventListener("click", () => {
-    const inputText = document.getElementById("new-task-input").value
-    createNewTaskCard(inputText)
-
+    let inputText = document.getElementById("new-task-input")
+    if (inputText !== "") {
+        createNewTaskCard(inputText.value)
+        inputText.value = ""
+    }
 })
 
 
