@@ -5,8 +5,6 @@ let activeCards = []
 let finishedCards = []
 
 /** create base of cards */
-
-
 const updateTasks = () => {
     /** all Cards */
     let taskCards = document.querySelectorAll(".task-card")
@@ -33,10 +31,6 @@ const updateTasks = () => {
 }
 updateTasks()
 
-
-
-
-
 /** New Task adding Section Toggle */
 let newTaskSection = document.querySelector(".new-task-img")
 let newTaskCard = document.querySelector(".new-task-card")
@@ -55,26 +49,6 @@ const toggleNewTaskSection = () => {
     
 
 }
-
-
-
-
-/** Card finish toggle */
-const cardFinishToggle = () => {
-    let finishButtons = document.querySelectorAll(".task-finish-button")
-    for (const button of finishButtons) {
-        button.addEventListener("click", () => {
-            console.log("-----------------")
-            let parent = button.parentElement.parentElement
-           parent.classList.toggle("finished")
-            if (parent.classList.contains("finished")) {button.innerText = "unfinish"}
-            else {button.innerText = "finish"}
-            updateTasks()
-        })
-    }
-}
-cardFinishToggle()
-
 
 
 
@@ -140,6 +114,7 @@ const createNewTaskCard = (title) => {
         updateTasks()
 }
 
+/** clears input for new tasks and adds task to display section */
 const addNowInput = document.getElementById("new-task-input")
 addNowInput.addEventListener("keypress", (event) => {
     let inputText = document.getElementById("new-task-input")
@@ -148,7 +123,6 @@ addNowInput.addEventListener("keypress", (event) => {
         inputText.value = ""
     }
 })
-
 const addNowButton = document.getElementById("new-task-button")
 addNowButton.addEventListener("click", () => {
     let inputText = document.getElementById("new-task-input")
@@ -161,18 +135,22 @@ addNowButton.addEventListener("click", () => {
 /** filter tasks by status */
 let filters = document.querySelectorAll(".filter-section-list-items")
 
-for (let filter of filters) {
+const filterApply = () => {
+    for (let filter of filters) {
     
     filter.addEventListener("click", () => {
-        filter.classList.toggle("task-cards-filters-focused")
-
+        filters.forEach(function (item) {
+            item.classList.remove("task-cards-filters-focused")
+        })
         if (filter.classList.contains("all-tasks")) {
+            filter.classList.add("task-cards-filters-focused")
             for (card of allCards) {
                 const displaySection = document.querySelector(".tasks-cards-display-section")
                 displaySection.appendChild(card) 
         }} else 
 
         if (filter.classList.contains("open-tasks")) {
+            filter.classList.toggle("task-cards-filters-focused")
             const displaySection = document.querySelector(".tasks-cards-display-section")
             displaySection.replaceChildren()
             for (card of activeCards) {
@@ -180,6 +158,7 @@ for (let filter of filters) {
         }} else 
 
         if (filter.classList.contains("finished-tasks")) {
+            filter.classList.toggle("task-cards-filters-focused")
             const displaySection = document.querySelector(".tasks-cards-display-section")
             displaySection.replaceChildren()
             for (card of finishedCards) {
@@ -188,4 +167,21 @@ for (let filter of filters) {
 
 
     })
+}}
+
+/** Card finish toggle */
+const cardFinishToggle = () => {
+    let finishButtons = document.querySelectorAll(".task-finish-button")
+    for (const button of finishButtons) {
+        button.addEventListener("click", () => {
+            console.log("-----------------")
+            let parent = button.parentElement.parentElement
+           parent.classList.toggle("finished")
+            if (parent.classList.contains("finished")) {button.innerText = "unfinish"}
+            else {button.innerText = "finish"}
+            updateTasks()
+        })
+    }
+    filterApply()
 }
+cardFinishToggle()
