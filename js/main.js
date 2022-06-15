@@ -1,27 +1,92 @@
 "strict use"
 const todayDate = new Date().toLocaleDateString("ge-CH", {year: 'numeric', month: '2-digit', day: '2-digit'})
-console.log(`Heutiges Datum: ${todayDate}`)
-const allCards = {}
-const activeCards = {}
-const finishedCards = {}
+const allCards = []
+const activeCards = []
+const finishedCards = []
 
-
+/** create base of cards */
 let taskCards = document.querySelectorAll(".task-card")
+
+// console.log(allCards)
+allCards.push(taskCards)
+// console.log(allCards)
+
+
+allCards.forEach(function(currentValue) {
+    console.log("currentValue", currentValue)
+    for (let i in currentValue) {
+        console.log("i:",currentValue[i])
+        if (currentValue[i].classList.contains("finished")) {
+            console.log("finished task found")
+            finishedCards.push(currentValue[i])
+            console.log("finishedCards:", finishedCards)
+    }
+    }
+})
+
+// for (let i of allCards) {
+//     console.log("taskCard: ", i)
+//     console.log("Classname", i.className)
+    // if (i.className === "finished") {
+    //     console.log("finished task found")
+    //     finishedCards.push(taskCard)
+    // }
+// }
+
+
+console.log("Finished Card:",finishedCards)
+
+
+
+
+/** New Task adding */
 let newTaskSection = document.querySelector(".new-task-img")
+let newTaskCard = document.querySelector(".new-task-card")
+
+newTaskSection.addEventListener("click", () => {
+    toggleNewTaskSection()
+})
+
+const toggleNewTaskSection = () => {
+   console.log("bild wurde geklickt")
+   console.log(newTaskCard.style.display.value)
+   if (newTaskCard.style.display === "none") {
+    newTaskCard.style.display = "flex"
+   } else {
+    newTaskCard.style.display = "none"
+   }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 for (let taskCard of taskCards) {
-    console.log(taskCard)
+    // console.log(taskCard)
     taskCard.addEventListener("click", () => {
         console.log("Card wurde geklickt")
     })
 }
 
 
-// newTaskSection.addEventListener("click", () => {
-//     console.log("bild wurde geklickt")
-// })
+
 
 // console.log(newTaskSection)
 
