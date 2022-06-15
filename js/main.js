@@ -162,11 +162,30 @@ addNowButton.addEventListener("click", () => {
 let filters = document.querySelectorAll(".filter-section-list-items")
 
 for (let filter of filters) {
+    
     filter.addEventListener("click", () => {
         filter.classList.toggle("task-cards-filters-focused")
+
+        if (filter.classList.contains("all-tasks")) {
+            for (card of allCards) {
+                const displaySection = document.querySelector(".tasks-cards-display-section")
+                displaySection.appendChild(card) 
+        }} else 
+
+        if (filter.classList.contains("open-tasks")) {
+            const displaySection = document.querySelector(".tasks-cards-display-section")
+            displaySection.replaceChildren()
+            for (card of activeCards) {
+                displaySection.appendChild(card) 
+        }} else 
+
+        if (filter.classList.contains("finished-tasks")) {
+            const displaySection = document.querySelector(".tasks-cards-display-section")
+            displaySection.replaceChildren()
+            for (card of finishedCards) {
+                displaySection.appendChild(card) 
+        }}
+
+
     })
 }
-
-console.log("filters:", filters)
-
-// 
