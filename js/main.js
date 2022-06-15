@@ -5,41 +5,31 @@ const activeCards = []
 const finishedCards = []
 
 /** create base of cards */
-let taskCards = document.querySelectorAll(".task-card")
-
-// console.log(allCards)
-allCards.push(taskCards)
-// console.log(allCards)
 
 
-allCards.forEach(function(currentValue) {
-    console.log("currentValue", currentValue)
-    for (let i in currentValue) {
-        console.log("i:",currentValue[i])
-        if (currentValue[i].classList.contains("finished")) {
-            console.log("finished task found")
-            finishedCards.push(currentValue[i])
-            console.log("finishedCards:", finishedCards)
-    }
-    }
-})
+const updateTasks = () => {
+    /** all Cards */
+    let taskCards = document.querySelectorAll(".task-card")
+    allCards.push(taskCards)
+    console.log("All Cards:",allCards)
 
-// for (let i of allCards) {
-//     console.log("taskCard: ", i)
-//     console.log("Classname", i.className)
-    // if (i.className === "finished") {
-    //     console.log("finished task found")
-    //     finishedCards.push(taskCard)
-    // }
-// }
+    /**finished cards */
+    let fnCards = document.querySelectorAll(".finished")
+    finishedCards.push(fnCards)
+    console.log("Finished Cards:",finishedCards)
 
-
-console.log("Finished Card:",finishedCards)
+    /** active cards */
+    let acCards = document.querySelectorAll(".task-card:not(.finished)")
+    activeCards.push(acCards)
+    console.log("Active Cards:",activeCards)
+}
+updateTasks()
 
 
 
 
-/** New Task adding */
+
+/** New Task adding Section Toggle */
 let newTaskSection = document.querySelector(".new-task-img")
 let newTaskCard = document.querySelector(".new-task-card")
 
@@ -48,8 +38,7 @@ newTaskSection.addEventListener("click", () => {
 })
 
 const toggleNewTaskSection = () => {
-   console.log("bild wurde geklickt")
-   console.log(newTaskCard.style.display.value)
+//    console.log("bild wurde geklickt")
    if (newTaskCard.style.display === "none") {
     newTaskCard.style.display = "flex"
    } else {
@@ -61,6 +50,7 @@ const toggleNewTaskSection = () => {
 
 
 
+/** Card finish toggle */
 
 
 
@@ -76,19 +66,6 @@ const toggleNewTaskSection = () => {
 
 
 
-
-
-for (let taskCard of taskCards) {
-    // console.log(taskCard)
-    taskCard.addEventListener("click", () => {
-        console.log("Card wurde geklickt")
-    })
-}
-
-
-
-
-// console.log(newTaskSection)
 
 
 
