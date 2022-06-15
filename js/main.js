@@ -22,6 +22,14 @@ const updateTasks = () => {
     let acCards = document.querySelectorAll(".task-card:not(.finished)")
     activeCards = acCards
     console.log("Active Cards:",activeCards.length)
+
+    let allTasksCounter = document.getElementById("all-task-counter")
+    let openTasksCounter = document.getElementById("open-task-counter")
+    let finishedTasksCounter = document.getElementById("finished-task-counter")
+
+    allTasksCounter.innerText = allCards.length
+    openTasksCounter.innerText = activeCards.length
+    finishedTasksCounter.innerText = finishedCards.length
 }
 updateTasks()
 
