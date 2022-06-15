@@ -168,6 +168,8 @@ const filterApply = () => {
 
     })
 }}
+filterApply()
+
 
 /** Card finish toggle */
 const cardFinishToggle = () => {
@@ -180,8 +182,11 @@ const cardFinishToggle = () => {
             if (parent.classList.contains("finished")) {button.innerText = "unfinish"}
             else {button.innerText = "finish"}
             updateTasks()
+            // filterApply()
         })
     }
-    filterApply()
+    
 }
 cardFinishToggle()
+
+/** finde heraus, warum ein task verschwindet, wenn man umherspielt bei open tasks und dann finish klickt */
