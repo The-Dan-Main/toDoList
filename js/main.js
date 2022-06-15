@@ -1,8 +1,8 @@
 "strict use"
 const todayDate = new Date().toLocaleDateString("ge-CH", {year: 'numeric', month: '2-digit', day: '2-digit'})
-const allCards = []
-const activeCards = []
-const finishedCards = []
+let allCards = []
+let activeCards = []
+let finishedCards = []
 
 /** create base of cards */
 
@@ -10,18 +10,18 @@ const finishedCards = []
 const updateTasks = () => {
     /** all Cards */
     let taskCards = document.querySelectorAll(".task-card")
-    allCards.push(taskCards)
-    console.log("All Cards:",allCards)
+    allCards = taskCards
+    console.log("All Cards:",allCards.length)
 
     /**finished cards */
     let fnCards = document.querySelectorAll(".finished")
-    finishedCards.push(fnCards)
-    console.log("Finished Cards:",finishedCards)
+    finishedCards = fnCards
+    console.log("Finished Cards:",finishedCards.length)
 
     /** active cards */
     let acCards = document.querySelectorAll(".task-card:not(.finished)")
-    activeCards.push(acCards)
-    console.log("Active Cards:",activeCards)
+    activeCards = acCards
+    console.log("Active Cards:",activeCards.length)
 }
 updateTasks()
 
@@ -50,17 +50,94 @@ const toggleNewTaskSection = () => {
 
 
 
+
 /** Card finish toggle */
+const cardFinishToggle = () => {
+    let finishButtons = document.querySelectorAll(".task-finish-button")
+    for (const button of finishButtons) {
+        button.addEventListener("click", () => {
+            console.log("finish button is clicked")
+            let parent = button.parentElement.parentElement
+           parent.classList.toggle("finished")
+            if (parent.classList.contains("finished")) {button.innerText = "unfinish"}
+            else {button.innerText = "finish"}
+            updateTasks()
+        })
+    }
+}
+cardFinishToggle()
 
 
 
 
 
+/** build new card */
+const createNewTaskCard = (title) => {
+    const displaySection = document.querySelector(".tasks-cards-display-section")
+    const newDivElement = document.createElement("div")
+    newDivElement.classList.add("task-card", "flex-container")
+/** ------------------------------first section-------------------------------------- */
+        const newDivElementfirstSection = document.createElement("div")
+        newDivElementfirstSection.classList.add("flex-container", "task-card-title-section")
+
+            const newFirstImg = document.createElement("img")
+            newFirstImg.classList.add("task-card-arrow")
+            newFirstImg.srcset = "./img/arrow2.png"
+
+            const newFirstInput = document.createElement("input")
+            newFirstInput.classList.add("task-title")
+            newFirstInput.value = title
+
+            newDivElementfirstSection.appendChild(newFirstImg)
+            newDivElementfirstSection.appendChild(newFirstInput)
+
+/** -------------------------------second section------------------------------------ */
+        const newDivElementSecondSection = document.createElement("div")
+        newDivElementSecondSection.classList.add("task-created")
+
+            const newSecondH3 = document.createElement("h3")
+            const newSecondSpan = document.createElement("span")
+            newSecondSpan.classList.add("task-created-date")
+            newSecondSpan.innerText = todayDate
+            newSecondH3.innerHTML = "created on: "
+
+            /** perhaps to nest span in h3 different if not properly shown */
+            newDivElementSecondSection.appendChild(newSecondH3)
+            newSecondH3.appendChild(newSecondSpan)
+
+
+/** -----------------------------thrid section--------------------------------------- */
+        const newDivElementThirdSection = document.createElement("div")
+        newDivElementThirdSection.classList.add("task-buttons")
+
+            const newThirdButtonEdit = document.createElement("button")
+            newThirdButtonEdit.classList.add("task-edit-button")
+            newThirdButtonEdit.innerText = "edit"
+
+            const newThirdButtonFinish = document.createElement("button")
+            newThirdButtonFinish.classList.add("task-finish-button")
+            newThirdButtonFinish.innerText = "finish"
+
+            newDivElementThirdSection.appendChild(newThirdButtonEdit)
+            newDivElementThirdSection.appendChild(newThirdButtonFinish)
+
+/** ---------------------------Combinator------------------------------------ */
+        newDivElement.appendChild(newDivElementfirstSection)
+        newDivElement.appendChild(newDivElementSecondSection)
+        newDivElement.appendChild(newDivElementThirdSection)
+
+        displaySection.appendChild(newDivElement)
+        cardFinishToggle()
+}
 
 
 
+const addNowButton = document.getElementById("new-task-button")
+addNowButton.addEventListener("click", () => {
+    const inputText = document.getElementById("new-task-input").value
+    createNewTaskCard(inputText)
 
-
+})
 
 
 
