@@ -139,6 +139,9 @@ const filterApply = () => {
     for (let filter of filters) {
     
     filter.addEventListener("click", () => {
+
+
+        
         filters.forEach(function (item) {
             item.classList.remove("task-cards-filters-focused")
         })
@@ -146,23 +149,34 @@ const filterApply = () => {
             filter.classList.add("task-cards-filters-focused")
             for (card of allCards) {
                 const displaySection = document.querySelector(".tasks-cards-display-section")
-                displaySection.appendChild(card) 
-        }} else 
+                let cards = document.querySelectorAll(".task-card")
+                cards.forEach(function (item) {
+                    item.style.display = "none"
+                })
+                for (card of allCards) {
+                    card.style.display ="flex" 
+        }}} else 
 
         if (filter.classList.contains("open-tasks")) {
             filter.classList.toggle("task-cards-filters-focused")
             const displaySection = document.querySelector(".tasks-cards-display-section")
-            displaySection.replaceChildren()
+            let cards = document.querySelectorAll(".task-card")
+            cards.forEach(function (item) {
+                item.style.display = "none"
+            })
             for (card of activeCards) {
-                displaySection.appendChild(card) 
+                card.style.display ="flex" 
         }} else 
 
         if (filter.classList.contains("finished-tasks")) {
             filter.classList.toggle("task-cards-filters-focused")
             const displaySection = document.querySelector(".tasks-cards-display-section")
-            displaySection.replaceChildren()
+            let cards = document.querySelectorAll(".task-card")
+            cards.forEach(function (item) {
+                item.style.display = "none"
+            })
             for (card of finishedCards) {
-                displaySection.appendChild(card) 
+                card.style.display ="flex" 
         }}
 
 
@@ -189,4 +203,8 @@ const cardFinishToggle = () => {
 }
 cardFinishToggle()
 
-/** finde heraus, warum ein task verschwindet, wenn man umherspielt bei open tasks und dann finish klickt */
+/** finde heraus, warum ein task verschwindet, wenn man umherspielt bei open tasks und dann finish klickt 
+ * 
+ * Es muss etwas zu tun haben, dass "all cards updated wird, wenn  task finished wird"
+ * 
+*/
