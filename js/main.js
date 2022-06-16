@@ -243,8 +243,10 @@ const hideWhenFilteredAndClicked = () => {
     }
 }
 
-/** finde heraus, warum ein task verschwindet, wenn man umherspielt bei open tasks und dann finish klickt 
- * 
- * Es muss etwas zu tun haben, dass "all cards updated wird, wenn  task finished wird"
- * 
-*/
+
+
+
+
+/** only show placeholder when empty display section, before first input */
+
+/** show "all done" when empty display section after all tasks finished */

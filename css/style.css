@@ -270,6 +270,28 @@ button:hover {
     background-color: var(--gray-back);
 }
 
+.display-section-noTasks {
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+}
+
+
+#display-section-allDone {
+    display: none;
+}
+ #display-section-placeholder {
+    display: none;
+ }
+
+
+
+
+
 .task-card {
     background-color: #fff;
     border: solid 2px black;
