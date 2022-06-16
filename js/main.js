@@ -114,7 +114,7 @@ const createNewTaskCard = (title) => {
 
     displaySection.appendChild(newDivElement)
 
-
+    hidePlaceholder()
     hideWhenFilteredAndClicked()
     updateTasks()
 }
@@ -250,5 +250,9 @@ const hideWhenFilteredAndClicked = () => {
 
 
 /** only show placeholder when empty display section, before first input */
+ const hidePlaceholder = () => {
+    let placeholder = document.getElementById("display-section-placeholder")
+    placeholder.style.display = "none"
+ }
 
 /** show "all done" when empty display section after all tasks finished */
