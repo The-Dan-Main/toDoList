@@ -35,6 +35,8 @@ updateTasks()
 let newTaskSection = document.querySelector(".new-task-img")
 let newTaskCard = document.querySelector(".new-task-card")
 
+newTaskCard.style.display = "none"
+
 newTaskSection.addEventListener("click", () => {
     toggleNewTaskSection()
 })
@@ -129,7 +131,7 @@ addNowInput.addEventListener("keypress", (event) => {
 const addNowButton = document.getElementById("new-task-button")
 addNowButton.addEventListener("click", () => {
     let inputText = document.getElementById("new-task-input")
-    if (inputText !== "") {
+    if (inputText.value !== "") {
         createNewTaskCard(inputText.value)
         inputText.value = ""
     }
