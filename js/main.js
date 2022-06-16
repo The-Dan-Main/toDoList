@@ -117,6 +117,8 @@ const createNewTaskCard = (title) => {
     hidePlaceholder()
     hideWhenFilteredAndClicked()
     updateTasks()
+    hideAllDone()
+
 }
 
 /** clears input for new tasks and adds task to display section */
@@ -149,6 +151,7 @@ const filterApply = () => {
                 item.classList.remove("task-cards-filters-focused")
             })
             if (filter.classList.contains("all-tasks")) {
+                hideAllDone()
                 filter.classList.toggle("task-cards-filters-focused")
                 for (card of allCards) {
                     const displaySection = document.querySelector(".tasks-cards-display-section")
@@ -160,9 +163,11 @@ const filterApply = () => {
                         card.style.display = "flex"
                     }
                 }
+                
             } else
 
                 if (filter.classList.contains("open-tasks")) {
+                    
                     filter.classList.toggle("task-cards-filters-focused")
                     const displaySection = document.querySelector(".tasks-cards-display-section")
                     let cards = document.querySelectorAll(".task-card")
@@ -172,9 +177,11 @@ const filterApply = () => {
                     for (card of activeCards) {
                         card.style.display = "flex"
                     }
+                    showAllDOne()
                 } else
 
                     if (filter.classList.contains("finished-tasks")) {
+                        hideAllDone()
                         filter.classList.toggle("task-cards-filters-focused")
                         const displaySection = document.querySelector(".tasks-cards-display-section")
                         let cards = document.querySelectorAll(".task-card")
@@ -203,6 +210,7 @@ const cardFinishToggle = (button) => {
         if (parent.classList.contains("finished")) { button.innerText = "unfinish" }
         else { button.innerText = "finish" }
         updateTasks()
+        showAllDOne()
     })
 }
 
@@ -211,12 +219,16 @@ const cardFinishToggle = (button) => {
 
 /** Card finish toggle */
 const hideWhenFilteredAndClicked = () => {
+    
     let finishButtons = document.querySelectorAll(".task-finish-button")
     for (const button of finishButtons) {
         button.addEventListener("click", () => {
+            
+            
+            
 
             let whichFilter = document.querySelector(".task-cards-filters-focused")
-            console.log("whichfilter is on: ", whichFilter.classList[1])
+            // console.log("whichfilter is on: ", whichFilter.classList[1])
 
             let allFilter = whichFilter.classList.contains("all-tasks")
             if (allFilter) {
@@ -256,3 +268,19 @@ const hideWhenFilteredAndClicked = () => {
  }
 
 /** show "all done" when empty display section after all tasks finished */
+
+const showAllDOne = () => {
+    let activeFilter = document.querySelector(".task-cards-filters-focused")
+    let allDone = document.getElementById("display-section-allDone")
+    console.log("active cards: ",activeCards)
+    if (activeFilter.classList.contains("open-tasks") && activeCards.length === 0) {
+        console.log("keine Aktive Tasks gefunden")
+        allDone.style.display = "block"
+    }
+}
+showAllDOne()
+
+const hideAllDone = () => {
+    let allDone = document.getElementById("display-section-allDone")
+    allDone.style.display = "none"
+}
