@@ -284,3 +284,17 @@ const hideAllDone = () => {
     let allDone = document.getElementById("display-section-allDone")
     allDone.style.display = "none"
 }
+
+
+
+/** when edit button clicked, only then input is editable  */
+
+/** create new branch and try implement a "delete task option" */
+
+/** create new branch and try implement "finish-all or "unfinsish all" functions */
+
+/** start to build a login page with a form */
+
+/** start to build a contact page */
+
+/** show to connor */
