@@ -71,6 +71,8 @@ const createNewTaskCard = (title) => {
     const newFirstInput = document.createElement("input")
     newFirstInput.classList.add("task-title")
     newFirstInput.value = title
+    newFirstInput.readOnly = "true"
+    newFirstInput.disabled = "true"
 
     newDivElementfirstSection.appendChild(newFirstImg)
     newDivElementfirstSection.appendChild(newFirstInput)
@@ -118,6 +120,7 @@ const createNewTaskCard = (title) => {
     hideWhenFilteredAndClicked()
     updateTasks()
     hideAllDone()
+    InputEditButton()
 
 }
 
@@ -288,6 +291,39 @@ const hideAllDone = () => {
 
 
 /** when edit button clicked, only then input is editable  */
+const InputEditButton = () => {
+    let editButton = document.querySelectorAll(".task-edit-button")
+    editButton.forEach(function (button) {
+        let inputField = button.parentElement.parentElement.firstChild.lastChild
+
+        button.addEventListener("click", () => {
+            
+            if (inputField.disabled) {
+                console.log("input: ", inputField)
+                inputField.disabled = false
+                inputField.readOnly = false
+                inputField.focus()
+            } else {
+                inputField.disabled = true
+                inputField.readOnly = true
+            }
+        })
+        inputField.addEventListener("keypress", (event) => {
+            if (event.key === "Enter"  && !inputField.disabled) {
+                inputField.disabled = true
+                inputField.readOnly = true
+            }
+        })
+    })
+}
+
+
+
+
+
+
+
+
 
 /** create new branch and try implement a "delete task option" */
 
