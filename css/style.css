@@ -355,6 +355,7 @@ button:hover {
     padding-right: 20px;
     justify-content: center;
     flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 .task-edit-button, .task-finish-button {
@@ -377,7 +378,7 @@ button:hover {
 
 /** Unfinished **/
 div.finished > div > h3 {
-    text-decoration: line-through 2px;
+    /* text-decoration: line-through 2px; */
     background-color: var(--dark-gray);
 }
 div.finished > div > input {

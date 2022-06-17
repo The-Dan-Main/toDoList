@@ -9,25 +9,28 @@ const todayDate =
 const todayTime = timer();
 
 function timer() {
-    var currentTime = new Date()
-    var hours = currentTime.getHours()
-    var minutes = currentTime.getMinutes()
-    var sec = currentTime.getSeconds()
-    if (minutes < 10) {
-        minutes = "0" + minutes
+    let date = new Date();
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+    let ss = date.getSeconds();
+    let session = "AM";
+
+    if (hh == 0) {
+        hh = 12;
     }
-    if (sec < 10) {
-        sec = "0" + sec
+    if (hh > 12) {
+        hh = hh - 12;
+        session = "PM";
     }
-    var t_str = hours + ":" + minutes + ":" + sec + " ";
-    if (hours > 11) {
-        t_str += "PM";
-    } else {
-        t_str += "AM";
-    }
+
+    hh = (hh < 10) ? "0" + hh : hh;
+    mm = (mm < 10) ? "0" + mm : mm;
+    ss = (ss < 10) ? "0" + ss : ss;
+
+    let t_str = hh + ":" + mm + ":" + ss + " " + session;
     // document.getElementById('time_span').innerHTML = t_str;
     setTimeout(timer, 1000);
-    
+
     return t_str
 }
 
@@ -120,7 +123,7 @@ const createNewTaskCard = (title) => {
 
     /** perhaps to nest span in h3 different if not properly shown */
     newDivElementSecondSection.appendChild(newSecondH3)
-    newSecondH3.appendChild(newSecondSpan)
+    newDivElementSecondSection.appendChild(newSecondSpan)
 
 
     /** -----------------------------thrid section--------------------------------------- */
@@ -238,6 +241,11 @@ filterApply()
 const cardFinishToggle = (button) => {
 
     button.addEventListener("click", () => {
+        let createdOnTitle = button.parentElement.parentElement.children[1].firstChild
+        let createdOnTime = button.parentElement.parentElement.children[1].lastChild
+        createdOnTitle.innerText = "finished on:"
+        createdOnTime.innerText = todayDate + " // " + timer()
+
         console.log("-----------------")
         let parent = button.parentElement.parentElement
         parent.classList.toggle("finished")
@@ -249,7 +257,6 @@ const cardFinishToggle = (button) => {
 }
 
 
-// cardFinishToggle() /** solange wir default cards haben! */
 
 /** Card finish toggle */
 const hideWhenFilteredAndClicked = () => {
@@ -326,11 +333,16 @@ const InputEditButton = () => {
     let editButton = document.querySelectorAll(".task-edit-button")
     editButton.forEach(function (button) {
         let inputField = button.parentElement.parentElement.firstChild.lastChild
-
+        let createdOnTitle = button.parentElement.parentElement.children[1].firstChild
+        let createdOnTime = button.parentElement.parentElement.children[1].lastChild
+        
         button.addEventListener("click", () => {
+            createdOnTitle.innerText = "last edited on:"
+            createdOnTime.innerText = todayDate + " // " + timer()
+
             
             if (inputField.disabled) {
-                console.log("input: ", inputField)
+                // console.log("input: ", inputField)
                 inputField.disabled = false
                 inputField.readOnly = false
                 inputField.focus()
