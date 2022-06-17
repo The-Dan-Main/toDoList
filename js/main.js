@@ -1,5 +1,50 @@
 "strict use"
-const todayDate = new Date().toLocaleDateString("ge-CH", { year: 'numeric', month: '2-digit', day: '2-digit' })
+const todayDate = 
+    new Date().toLocaleDateString(
+        "en-CH", 
+        { year: 'numeric', month: '2-digit', day: '2-digit'},
+        )
+;
+
+const todayTime = timer();
+
+function timer() {
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    var sec = currentTime.getSeconds()
+    if (minutes < 10) {
+        minutes = "0" + minutes
+    }
+    if (sec < 10) {
+        sec = "0" + sec
+    }
+    var t_str = hours + ":" + minutes + ":" + sec + " ";
+    if (hours > 11) {
+        t_str += "PM";
+    } else {
+        t_str += "AM";
+    }
+    // document.getElementById('time_span').innerHTML = t_str;
+    setTimeout(timer, 1000);
+    
+    return t_str
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let allCards = []
 let activeCards = []
 let finishedCards = []
@@ -82,9 +127,9 @@ const createNewTaskCard = (title) => {
     newDivElementSecondSection.classList.add("task-created")
 
     const newSecondH3 = document.createElement("h3")
-    const newSecondSpan = document.createElement("span")
+    const newSecondSpan = document.createElement("h4")
     newSecondSpan.classList.add("task-created-date")
-    newSecondSpan.innerText = todayDate
+    newSecondSpan.innerText = todayDate + " // " + timer()
     newSecondH3.innerHTML = "created on: "
 
     /** perhaps to nest span in h3 different if not properly shown */
