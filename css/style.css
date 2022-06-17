@@ -26,7 +26,10 @@ button {
     cursor: pointer;
 }
 button:hover {
-    box-shadow: 2px 2px  2px var(--dark-gray);
+    box-shadow: 4px 4px 4px var(--dark-gray);
+}
+button:focus-visible {
+    box-shadow: 4px 4px 4px var(--dark-gray);
 }
 
 .landing-section {
@@ -150,7 +153,18 @@ button:hover {
     top: 2px;
     transition: width 1s, height 0s;
 }
-
+.nav-list-items:focus-visible .nav-list-elements-underline{
+    outline:none;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    top: 2px;
+    transition: width 1s, height 0s;
+}
+.nav-list-items:focus-visible {
+    outline:none;
+}
 
 
 .new-task-section {
@@ -159,6 +173,11 @@ button:hover {
     border-radius: 20px;
     align-items: center;
     display: flex;
+}
+.new-task-img:hover, .new-task-img:focus-visible {
+    border: -2px solid black;
+    border-radius: 30px;
+    box-shadow: 4px 4px 4px var(--dark-gray);
 }
 .new-task-title {
     padding-left: 20px;
@@ -428,4 +447,7 @@ div.finished > div > button.task-edit-button {
 }
 .linked-in:hover {
     filter: grayscale(100%) brightness(60);
+}
+.footer-images:focus-visible {
+    outline: none;
 }
