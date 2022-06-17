@@ -375,5 +375,3 @@ const InputEditButton = () => {
 /** start to build a login page with a form */
 
 /** start to build a contact page */
-
-/** show to connor */

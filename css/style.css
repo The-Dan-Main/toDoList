@@ -417,8 +417,15 @@ div.finished > div > button.task-edit-button {
 }
 .footer-images {
     padding: 10px;
+    filter: brightness(50%);
 }
 .linked-in {
     height: 30px;
+    filter: grayscale(100%) brightness(140%);
+}
+.footer-images:hover {
+    filter: brightness(100%) grayscale(100%);
+}
+.linked-in:hover {
     filter: grayscale(100%) brightness(60);
 }
