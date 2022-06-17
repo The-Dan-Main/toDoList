@@ -31,20 +31,6 @@ function timer() {
     return t_str
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let allCards = []
 let activeCards = []
 let finishedCards = []
@@ -74,7 +60,7 @@ const updateTasks = () => {
     openTasksCounter.innerText = activeCards.length
     finishedTasksCounter.innerText = finishedCards.length
 }
-updateTasks()
+
 
 /** New Task adding Section Toggle */
 let newTaskSection = document.querySelector(".new-task-img")
@@ -320,13 +306,13 @@ const hideWhenFilteredAndClicked = () => {
 const showAllDOne = () => {
     let activeFilter = document.querySelector(".task-cards-filters-focused")
     let allDone = document.getElementById("display-section-allDone")
-    console.log("active cards: ",activeCards)
+    // console.log("active cards: ",activeCards)
     if (activeFilter.classList.contains("open-tasks") && activeCards.length === 0) {
         console.log("keine Aktive Tasks gefunden")
         allDone.style.display = "block"
     }
 }
-showAllDOne()
+// showAllDOne()
 
 const hideAllDone = () => {
     let allDone = document.getElementById("display-section-allDone")
