@@ -82,8 +82,6 @@ const toggleNewTaskSection = () => {
     } else {
         newTaskCard.style.display = "none"
     }
-
-
 }
 
 
@@ -154,7 +152,7 @@ const createNewTaskCard = (title) => {
     hideWhenFilteredAndClicked()
     updateTasks()
     hideAllDone()
-    InputEditButton()
+    InputEditButton(newDivElement)
 
 }
 
@@ -223,7 +221,7 @@ const filterApply = () => {
                         const displaySection = document.querySelector(".tasks-cards-display-section")
                         let cards = document.querySelectorAll(".task-card")
                         cards.forEach(function (item) {
-                            item.style.display = "none"
+                            item.style.display = "none" 
                         })
                         for (card of finishedCards) {
                             card.style.display = "flex"
@@ -329,35 +327,38 @@ const hideAllDone = () => {
 
 
 /** when edit button clicked, only then input is editable  */
-const InputEditButton = () => {
-    let editButton = document.querySelectorAll(".task-edit-button")
-    editButton.forEach(function (button) {
-        let inputField = button.parentElement.parentElement.firstChild.lastChild
-        let createdOnTitle = button.parentElement.parentElement.children[1].firstChild
-        let createdOnTime = button.parentElement.parentElement.children[1].lastChild
-        
-        button.addEventListener("click", () => {
-            createdOnTitle.innerText = "last edited on:"
-            createdOnTime.innerText = todayDate + " // " + timer()
+const InputEditButton = (newElement) => {
+    let editButton2 = newElement.lastChild.firstChild
+    let inputField = editButton2.parentElement.parentElement.firstChild.lastChild
+    let createdOnTitle = editButton2.parentElement.parentElement.children[1].firstChild
+    let createdOnTime = editButton2.parentElement.parentElement.children[1].lastChild
 
-            
-            if (inputField.disabled) {
-                // console.log("input: ", inputField)
-                inputField.disabled = false
-                inputField.readOnly = false
-                inputField.focus()
-            } else {
-                inputField.disabled = true
-                inputField.readOnly = true
-            }
-        })
-        inputField.addEventListener("keypress", (event) => {
-            if (event.key === "Enter"  && !inputField.disabled) {
-                inputField.disabled = true
-                inputField.readOnly = true
-            }
-        })
+    editButton2.addEventListener("click", () => {
+        createdOnTitle.innerText = "last edited on:"
+        createdOnTime.innerText = todayDate + " // " + timer()
+
+
+        if (inputField.disabled) {
+            // console.log("input: ", inputField)
+            inputField.disabled = false
+            inputField.readOnly = false
+            inputField.focus()
+        } else {
+            inputField.disabled = true
+            inputField.readOnly = true
+        }
     })
+    inputField.addEventListener("keypress", (event) => {
+        if (event.key === "Enter" && !inputField.disabled) {
+            inputField.disabled = true
+            inputField.readOnly = true
+        }
+    })
+    inputField.addEventListener("focusout", () => {
+        inputField.disabled = true
+        inputField.readOnly = true
+    })
+
 }
 
 
@@ -375,3 +376,5 @@ const InputEditButton = () => {
 /** start to build a login page with a form */
 
 /** start to build a contact page */
+
+
