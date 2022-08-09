@@ -8,6 +8,7 @@ const todayDate =
 
 const todayTime = timer();
 
+// REVIEW: great use of timer function
 function timer() {
     let date = new Date();
     let hh = date.getHours();
@@ -34,12 +35,16 @@ function timer() {
     return t_str
 }
 
+// REVIEW: good way to show or hide different todos
 let allCards = []
 let activeCards = []
 let finishedCards = []
 
 /** create base of cards */
 const updateTasks = () => {
+    // REVIEW: great way to organise the cards into categories 
+    // and it is called in the correct places
+
     /** all Cards */
     let taskCards = document.querySelectorAll(".task-card")
     allCards = taskCards
@@ -71,6 +76,7 @@ let newTaskCard = document.querySelector(".new-task-card")
 
 newTaskCard.style.display = "none"
 
+// REVIEW: this could be an onclick directly on the newTaskSection element
 newTaskSection.addEventListener("click", () => {
     toggleNewTaskSection()
 })
@@ -89,6 +95,8 @@ const toggleNewTaskSection = () => {
 
 /** build new card */
 const createNewTaskCard = (title) => {
+    // REVIEW: very good implementation of creating a new card. I advise you to use innerHTML
+    // this would reduce the amount of code in this function
     const displaySection = document.querySelector(".tasks-cards-display-section")
     const newDivElement = document.createElement("div")
     newDivElement.classList.add("task-card", "flex-container")
@@ -177,6 +185,8 @@ addNowButton.addEventListener("click", () => {
 /** filter tasks by status */
 let filters = document.querySelectorAll(".filter-section-list-items")
 
+// REVIEW: Great way to filter out the cards and organise them via the class names,
+// this will be easier to organise when you rewrite it within React
 const filterApply = () => {
     for (let filter of filters) {
 
@@ -236,6 +246,7 @@ filterApply()
 
 
 /** Card finish toggle */
+// REVIEW: clear implementation regarding the card completion
 const cardFinishToggle = (button) => {
 
     button.addEventListener("click", () => {
@@ -307,7 +318,7 @@ const hideWhenFilteredAndClicked = () => {
  }
 
 /** show "all done" when empty display section after all tasks finished */
-
+// REVIEW: clear function name and purpose
 const showAllDOne = () => {
     let activeFilter = document.querySelector(".task-cards-filters-focused")
     let allDone = document.getElementById("display-section-allDone")
@@ -319,6 +330,7 @@ const showAllDOne = () => {
 }
 // showAllDOne()
 
+// REVIEW: clear function name and purpose
 const hideAllDone = () => {
     let allDone = document.getElementById("display-section-allDone")
     allDone.style.display = "none"
@@ -328,6 +340,8 @@ const hideAllDone = () => {
 
 /** when edit button clicked, only then input is editable  */
 const InputEditButton = (newElement) => {
+    // REVIEW: great way to handle the edit of the todo taking into account all of the user
+    // interactions e.g. focus out event or keypress
     let editButton2 = newElement.lastChild.firstChild
     let inputField = editButton2.parentElement.parentElement.firstChild.lastChild
     let createdOnTitle = editButton2.parentElement.parentElement.children[1].firstChild

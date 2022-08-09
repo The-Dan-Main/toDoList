@@ -3,6 +3,7 @@
     src: url(../fonts/static/Karla-Medium.ttf);
 }
 
+/* REVIEW: great use of CSS variables */
 :root {
     --gray-back: rgb(221, 220, 220);
     --light-gray: whitesmoke;
@@ -242,7 +243,7 @@ button:focus-visible {
 
 
 
-
+/* REVIEW: I suggest separating the todos css into a separate file called todos.css */
 
 .task-cards-section {
     margin-bottom: 20px;
